@@ -79,8 +79,6 @@ class MyLinkedList:
                 break
             itr = itr.next
             count = count +1
-        
-
 
 # Your MyLinkedList object will be instantiated and called as such:
 # obj = MyLinkedList()
