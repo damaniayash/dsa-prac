@@ -11,13 +11,17 @@ class Solution:
         return root
         
     def helper(self, node, preorder, inorder):
+
         if not preorder or not inorder:
             return 
+
         node.val = preorder.pop(0)
         ind = inorder.index(node.val)
+
         if len(inorder[0:ind]) != 0:
             node.left = TreeNode()
             self.helper(node.left, preorder, inorder[0:ind])
+            
         if len(inorder[ind+1:]) != 0:
             node.right = TreeNode()
             self.helper(node.right, preorder, inorder[ind+1:])
