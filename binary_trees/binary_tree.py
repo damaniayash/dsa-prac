@@ -20,6 +20,35 @@ class Tree:
         if self.root.right != None and target > self.root.data:
             self.root.right.search(target)
 
+    def inorder_successor(self, root, targetval):
+        if self.root == None:
+            return
+        node = self.root
+        while node.data != targetval:
+            print(node.data)
+            if node.left != None and targetval < node.data:
+                node = node.left
+            elif node.right != None and targetval > node.data:
+                node = node.right
+        print('currently at : ', node.data)
+        if node.right != None:
+            node = node.right
+            while node.left != None:
+                node = node.left
+            print('right subtree present, successor is',node.data)
+        else:
+            ancestor = self.root
+            while ancestor != node:
+                if node.data < ancestor.data:
+                    successor = ancestor
+                    ancestor = ancestor.left
+                else:
+                    ancestor = ancestor.right
+            print('right subtree not present, successor is', successor.data)
+
+
+
+
     def pre_order(self,root):
         if root == None:
             return
@@ -92,20 +121,26 @@ class Tree:
             que.pop(0)
         return res
 
-    
+           
+# node = Node(10)
+# node.left = Node(5)
+# node.right = Node(15)
+# node.left.left = Node(2)
+# node.left.right = Node(7)
+# node.right.left = Node(12)
+# node.right.right = Node(100)
 
-        
-    
-    
-
-        
-node = Node(10)
-node.left = Node(5)
-node.right = Node(15)
-node.left.left = Node(2)
-node.left.right = Node(7)
-node.right.left = Node(12)
-node.right.right = Node(100)
+node = Node(15)
+node.left = Node(10)
+node.right = Node(20)
+node.left.left = Node(8)
+node.left.right = Node(12)
+node.right.left = Node(17)
+node.right.right = Node(25)
+node.left.left.left = Node(6)
+node.left.right.left = Node(11)
+node.right.left.left = Node(16)
+node.right.right.right = Node(27)
 
 tree = Tree(node)
 
@@ -122,9 +157,9 @@ tree = Tree(node)
 # print("Post-order : ")
 # tree.post_order(node)
 
-tree.level_order(node)
-print(tree.level_order_lc(node))
-
+#tree.level_order(node)
+#print(tree.level_order_lc(node))
+tree.inorder_successor(node, 17)
 
 '''
         10
