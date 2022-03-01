@@ -45,6 +45,11 @@ class Tree:
                 else:
                     ancestor = ancestor.right
             print('right subtree not present, successor is', successor.data)
+        
+    def inorder_predecessor(self,root,targetval):
+        if self.root == None:
+            return None
+        
 
 
 
