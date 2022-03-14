@@ -23,7 +23,7 @@ class circular_queue:
             print('queue is full')
 
     def deQueue(self) -> bool:
-        
+        pass
 
     def Front(self) -> int:
         pass
