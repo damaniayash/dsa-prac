@@ -14,6 +14,7 @@ class circular_queue:
                 self.queue[self.tail] = value
                 return True
             else:
+                print("entered else")
                 self.tail = (self.tail + 1) % self.length 
                 self.queue[self.tail] = value
                 return True
@@ -52,34 +53,23 @@ class circular_queue:
         return False
 
     def isFull(self) -> bool:
-        if abs(self.head - self.tail) == self.length - 1:
+        if None not in self.queue:
             return True
-        elif self.head > self.tail and abs(self.head - self.tail) == 1:
-            return True
-        return False
+        else: 
+            return False
+        # if abs(self.head - self.tail) == self.length - 1 and None not in:
+        #     print('full ho gaya')
+        #     return True
+        # elif self.head > self.tail and abs(self.head - self.tail) == 1:
+        #     return True
+        # return False
         
-que = circular_queue(5)
+que = circular_queue(3)
 print(que.queue)
 print('head',que.head,'tail',que.tail)
-que.enQueue(5)
-que.enQueue(13)
-que.enQueue(8)
+que.enQueue(1)
 que.enQueue(2)
-que.enQueue(10)
-print('head',que.head,'tail',que.tail)
-print(que.queue)
-print(que.Front())
-print(que.Rear())
-que.deQueue()
-print('head',que.head,'tail',que.tail)
-print(que.queue)
-que.deQueue()
-print('head',que.head,'tail',que.tail)
-print(que.queue)
-que.enQueue(23)
-print('head',que.head,'tail',que.tail)
-print(que.queue)
-que.enQueue(6)
+que.enQueue(3)
 print('head',que.head,'tail',que.tail)
 print(que.queue)
 que.deQueue()
@@ -88,14 +78,17 @@ print(que.queue)
 que.deQueue()
 print('head',que.head,'tail',que.tail)
 print(que.queue)
-que.deQueue()
+print(que.enQueue(3))
 print('head',que.head,'tail',que.tail)
 print(que.queue)
-que.deQueue()
+print(que.enQueue(5))
 print('head',que.head,'tail',que.tail)
 print(que.queue)
-que.deQueue()
-print('head',que.head,'tail',que.tail)
-print(que.queue)
-print(que.Front())
-print(que.Rear())
+
+# def isFull(self) -> bool:
+#     if abs(self.head - self.tail) == self.length - 1 and None not in:
+#         print('full ho gaya')
+#         return True
+#     elif self.head > self.tail and abs(self.head - self.tail) == 1:
+#         return True
+#     return False
