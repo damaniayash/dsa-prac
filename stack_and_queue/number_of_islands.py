@@ -29,6 +29,7 @@ class Solution:
             curr_node = queue.pop(0)
             grid[curr_node[0]][curr_node[1]] = -1
             
+            #check up,down,left,right
             next_node_candidates.append([curr_node[0]+1, curr_node[1]])
             next_node_candidates.append([curr_node[0], curr_node[1]+1])
             next_node_candidates.append([curr_node[0]-1, curr_node[1]])
