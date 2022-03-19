@@ -36,7 +36,7 @@ class Solution:
             next_node_candidates.append([curr_node[0], curr_node[1]-1])
             
             for next_node in next_node_candidates:
-                
+                #check if the next_node index is valid.
                 if next_node[0] >= 0 and next_node[1] >= 0 and next_node[0] <= grid_lx-1 and next_node[1] <= grid_ly - 1 and grid[next_node[0]][next_node[1]] == 1:
                     
                     queue.append(next_node)
