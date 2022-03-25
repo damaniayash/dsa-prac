@@ -4,24 +4,35 @@ temperatures = [34,34,47,47,34,34,34,47,34,47,47,47,34,34,34,47,47,34,47,47,34,3
 #temperatures = [73,74,75,71,69,72,76,73]
 
 def dailyTemperatures(temperatures):
-    stack = deque()
-    res = [0]*len(temperatures)
-    print(res)
-    stack.append([temperatures[0],0])
-    itr = 1
-    while itr < len(temperatures)-1:
-        print(itr)
-        while temperatures[itr] > stack[-1][0]:
-            a = stack.pop()
-            res[a[1]] = itr - a[1]
-            if not stack:
-                break
-        stack.append([temperatures[itr],itr])
-        itr+=1
-    print(res)
+    stack = deque([])
+    res = [0] * len(temperatures)
+    for i, current_temperature in enumerate(temperatures):
+        while stack and current_temperature > temperatures[stack[-1]]:
+            prev = stack.pop()
+            res[prev] = i - prev
+        stack.append(i)
+    return res
+print(dailyTemperatures(temperatures))
+
+# def dailyTemperatures(temperatures):
+#     stack = deque()
+#     res = [0]*len(temperatures)
+#     print(res)
+#     stack.append([temperatures[0],0])
+#     itr = 1
+#     while itr < len(temperatures)-1:
+#         print(itr)
+#         while temperatures[itr] > stack[-1][0]:
+#             a = stack.pop()
+#             res[a[1]] = itr - a[1]
+#             if not stack:
+#                 break
+#         stack.append([temperatures[itr],itr])
+#         itr+=1
+#     print(res)
         
 
-dailyTemperatures(temperatures)
+# dailyTemperatures(temperatures)
 
 
 
