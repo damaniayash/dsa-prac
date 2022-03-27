@@ -18,15 +18,14 @@ class Solution:
         
     def helper(self,node,visited,new_node,node_dict):
         visited.append(node)
-        curr_node = new_node
-        node_dict[node] = curr_node
+        node_dict[node] = new_node
         for i in node.neighbors:
             if i in visited:
-                curr_node.neighbors.append(node_dict[i])
+                new_node.neighbors.append(node_dict[i])
                 continue 
             else: #i is not encountered before
                 temp = Node(i.val)
-                curr_node.neighbors.append(temp)
+                new_node.neighbors.append(temp)
                 self.helper(i,visited,temp,node_dict) 
                     
         
