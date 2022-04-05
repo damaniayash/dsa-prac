@@ -11,3 +11,18 @@ a = a.split('|')
 for i in range(0,len(a)):
 	a[i] = int(a[i])
 print(a)
+
+# Input: "3[z]2[2[y]pq4[2[jk]e1[f]]]ef"
+# Output: "zzzyypqfejkjkfejkjkfejkjkfejkjkyypqfejkjkfejkjkfejkjkfejkjkef"
+# Expected: "zzzyypqjkjkefjkjkefjkjkefjkjkefyypqjkjkefjkjkefjkjkefjkjkefef"
+
+# [[0,0,0],[0,1,1]]
+# 1
+# 1
+# 1
+if type('op') == str:
+	print('yp')
+print(int('04'))
+x = [[0,0,0,0],[0,1,1,0],[1,1,1,1],[1,1,1,1]]
+a = [1,2,3,4,5]
+print(len(a))
