@@ -2,14 +2,15 @@ class Solution:
     def pivotIndex(self, nums: List[int]) -> int:
         l_list = [0] * len(nums)
         r_list = [0] * len(nums)
-        sum = 0
+        
         
         # Create l_list -> Array of increasing sums from left to right
-        # Create r_list -> Array of increasing sums from right to left
-        
+        sum = 0
         for i in range(0,len(nums)):
             sum += nums[i]
             l_list[i] = sum
+
+        # Create r_list -> Array of increasing sums from right to left    
         sum = 0
         for i, e in reversed(list(enumerate(nums))):
             sum += nums[i]
