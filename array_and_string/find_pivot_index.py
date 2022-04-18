@@ -1,8 +1,8 @@
 class Solution:
     def pivotIndex(self, nums: List[int]) -> int:
+        
         l_list = [0] * len(nums)
         r_list = [0] * len(nums)
-        
         
         # Create l_list -> Array of increasing sums from left to right
         sum = 0
