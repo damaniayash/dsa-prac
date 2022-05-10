@@ -16,14 +16,14 @@ class Solution:
             self.helper(temp, node)
         return head
     
-    def helper(self, head, node):
+    def helper(self, head, prev):
         if not head:
             return
         if head.next:
             temp = head.next.next
-            temp1 = head
+            node = head
             head = head.next
-            head.next = temp1
-            temp1.next = temp
-            node.next = head
-            self.helper(temp, temp1)    
+            head.next = node
+            node.next = temp
+            prev.next = head
+            self.helper(temp, node)   
