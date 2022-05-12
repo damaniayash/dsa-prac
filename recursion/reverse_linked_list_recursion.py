@@ -14,6 +14,7 @@ class Solution:
         #print('finally at', node.val)
         if not head.next :
             return head
+            
         temp = head.next
         head.next = None
         fut = temp.next
