@@ -6,7 +6,7 @@ class Solution:
             wordset = set()
             while s[j] not in wordset :
                 wordset.add(s[j])
-                curr_cnt += 1x
+                curr_cnt += 1
                 j += 1
                 if j > len(s)-1:
                     break
