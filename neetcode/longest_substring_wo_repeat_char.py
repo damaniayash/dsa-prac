@@ -10,7 +10,8 @@ class Solution:
             char_set.add(s[r])
             ans = max(ans, len(char_set))
         return ans
-
+        
+        # Brute Force
         # curr_cnt, max_cnt = 0, 0
         # for i in range(0, len(s)):
         #     j = i
