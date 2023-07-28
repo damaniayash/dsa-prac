@@ -1,6 +1,6 @@
 '''
 Use binary search twice. First search is to find the row containing target.
-Then perform a binary search on the row 
+Then perform a binary search on the row.
 '''
 class Solution:
     def binary_search_row(self, matrix, target):
