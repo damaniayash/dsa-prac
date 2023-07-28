@@ -22,5 +22,6 @@ class Solution:
                         dfs((x,y))
         
         dfs((sr,sc))
+        #print(image)
         return image
 
