@@ -4,6 +4,12 @@
 #         self.val = val
 #         self.left = left
 #         self.right = right
+
+'''
+Intialize depth as 1. Keep adding 1 to depth until we encounter leaf node.
+Compare the accumulated depth with maxdepth and select the higest.
+For empty trees, since the root is null, it will skip preorder function and return 0 (default maxdepth value)
+'''
 class Solution:
     def maxDepth(self, root: Optional[TreeNode]) -> int:
         maxdepth, depth = 0, 1
