@@ -5,7 +5,11 @@
 #         self.left = left
 #         self.right = right
 '''
-
+Inner function with prev_max as a paramter.
+Compare the current node with previous node.
+If current node is greater/equal to prev_max, set add = 1 since it it a good node.
+call traverse recursively for left and right subtree.
+return add + good nodes in left subtree + good nodes in right subtree.
 '''
 class Solution:
     def goodNodes(self, root: TreeNode) -> int:
