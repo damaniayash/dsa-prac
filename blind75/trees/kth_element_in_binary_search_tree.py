@@ -4,6 +4,11 @@
 #         self.val = val
 #         self.left = left
 #         self.right = right
+'''
+Inorder traversal for BST is always sorted.
+So kth smallest element is (k-1)th element in inorder list.
+k-1 beacuse list is 0 indexed whereas question assumes k is 1 indexed.
+'''
 class Solution:
     def kthSmallest(self, root: Optional[TreeNode], k: int) -> int:
         arr = []
