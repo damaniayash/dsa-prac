@@ -18,4 +18,21 @@ class Solution:
             if inorder_arr[i] >= inorder_arr[i+1]:
                 return False
         else: return True
+
+'''
+More elegant solution.
+
+'''
+import math
+class Solution:
+    def isValidBST(self, root: Optional[TreeNode]) -> bool:
+
+        def traverse(root, left, right):
+            if not root:
+                return True
+            if not (left < root.val < right):
+                return False
+            return (traverse(root.left, left, root.val) and traverse(root.right, root.val, right))
+        
+        return traverse(root, -math.inf, math.inf)
         
