@@ -1,3 +1,18 @@
+'''
+create two heaps
+maxheap -> for the left side of the aray
+minheap -> for the right side of the array
+We add our num to the maxheap every time.
+We want to ensure two things:
+1. We want the root of heap heap <= root of minheap. If this is not the case pop from maxheap and push into minheap
+2. At anypoint we want our len of heaps to differ by 1. len(maxheap) - len(minheap) < 2.
+    If at any point the difference in lengths is greater than 2, we pop the element from bigger heap and push it into smaller heap.   
+To find mean:
+if sum of len is even.
+    return avg of both root.
+if odd
+    return the root of the heap with bigger length.
+'''
 import heapq
 class MedianFinder:
 
@@ -24,7 +39,6 @@ class MedianFinder:
         # print('maxheap',self.maxheap)
         # print('minheap',self.minheap)
         # print(self.maxheap[0], self.minheap[0])
-
 
 
     def findMedian(self) -> float:
